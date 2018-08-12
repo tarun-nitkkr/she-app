@@ -15,6 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Launch extends CI_Controller {
 
     //put your code here
+    private $launchLib;
 
     function __construct() {
         parent::__construct();
@@ -306,6 +307,19 @@ class Launch extends CI_Controller {
         echo "<h1>".$pass."</h1>";
         return;
         
+    }
+
+
+    public function wrapItUp() {
+        header('Content-Type: application/json');
+        $this->load->library('LaunchLib.php');
+        $this->launchLib = new LaunchLib();
+
+        if($_GET['xfind'] == 'AVAILABILITY') {
+            $response = $this->launchLib->testHitAvailability();
+        }
+
+        echo json_encode($response);
     }
 
 }
