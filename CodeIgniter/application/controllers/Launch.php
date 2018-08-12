@@ -311,6 +311,10 @@ class Launch extends CI_Controller {
 
 
     public function wrapItUp() {
+        if($_SERVER['REQUEST_METHOD'] != 'GET' && $_SERVER['REQUEST_METHOD'] != 'POST') {
+            header('Access-Control-Allow-Origin: *');
+            return;
+        }
         header('Content-Type: application/json');
         $this->load->library('LaunchLib.php');
         $this->launchLib = new LaunchLib();
