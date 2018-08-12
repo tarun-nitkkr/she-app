@@ -315,6 +315,7 @@ class Launch extends CI_Controller {
             header('Access-Control-Allow-Origin: *');
             return;
         }
+        header('Access-Control-Allow-Origin: *');
         header('Content-Type: application/json');
         $this->load->library('LaunchLib.php');
         $this->launchLib = new LaunchLib();
