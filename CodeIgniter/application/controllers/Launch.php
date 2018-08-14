@@ -322,8 +322,10 @@ class Launch extends CI_Controller {
 
         if($_GET['xfind'] == 'AVAILABILITY') {
             $response = $this->launchLib->testHitAvailability();
+        } else if($_GET['xfind'] == 'PROPERTY') {
+            $response = $this->launchLib->testHitPropertyDetails();
         } else {
-            $response['STATUS'] = 'ERROR/No such API';
+            $response['STATUS'] = 'ERROR/xfind invalid!';
         }
 
         echo json_encode($response);
