@@ -13,13 +13,16 @@ class LaunchLib
 
     public function testHitAvailability() {
 
-        $paramStr = '';
-        foreach ($_GET as $key=>$value) {
-            if($key=='xfind') {
-                continue;
-            }
-            $paramStr.=$key.'='.urlencode($value).'&';
-        }
+
+        $paramStr = $_SERVER['QUERY_STRING'];
+//        $paramArray = explode('&',$_SERVER['QUERY_STRING']);
+//        foreach ($paramArray as $key=>$value) {
+//            $currentParam = explode()
+//            if($key=='xfind') {
+//                continue;
+//            }
+//            $paramStr.=$key.'='.urlencode($value).'&';
+//        }
 
         $apiKey = '1m6lfng9fqd5fkv57r1c0cms70';
         $sharedSecret = '60mdjb6pisd5u';
@@ -69,13 +72,14 @@ class LaunchLib
 
     public function testHitPropertyDetails() {
 
-        $paramStr = '';
-        foreach ($_GET as $key=>$value) {
-            if($key=='xfind') {
-                continue;
-            }
-            $paramStr.=$key.'='.urlencode($value).'&';
-        }
+//        $paramStr = '';
+//        foreach ($_GET as $key=>$value) {
+//            if($key=='xfind') {
+//                continue;
+//            }
+//            $paramStr.=$key.'='.urlencode($value).'&';
+//        }
+        $paramStr = $_SERVER['QUERY_STRING'];
 
         $apiKey = '1m6lfng9fqd5fkv57r1c0cms70';
         $sharedSecret = '60mdjb6pisd5u';
