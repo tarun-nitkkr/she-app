@@ -356,9 +356,9 @@ class CommonLib {
         }
         
         if($isDone == 'N') {
-            global $ERROR_CODE;
-            $ERROR_CODE = '52';
-            throw new Exception("Invalid Query: Some unbought items still in list");
+#            global $ERROR_CODE;
+#            $ERROR_CODE = '52';
+#            throw new Exception("Invalid Query: Some unbought items still in list");
         }
         
         
